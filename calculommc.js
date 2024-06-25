@@ -1,7 +1,14 @@
 let numero1
 let numero2
 
-process.stdin.on("data", function(data) {
+console.log("Favor digitar um número:")
+process.stdin.on("data", function(data){
+    numero1 = data.toString().trim()
+
+    console.log("Favor digitar o segundo número")
+    process.stdin.on("data", function(data){
+        numero2 = data.toString().trim()
+
     let input = +data.toString().trim()
 
     if(!numero1) {
@@ -30,7 +37,8 @@ process.stdin.on("data", function(data) {
             }
         }
 
-        
         process.exit()
     }
+
+})
 })
